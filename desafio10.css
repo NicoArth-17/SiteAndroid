@@ -1,0 +1,215 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2? família=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+* /* configuraçoes globais, ou seja, para tudo que está no codigo */
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root /* classe para determinar as variaveis que serao usadas no codigo */
+{
+   --cor0: #c5ebd6;  /* uso do '--' para declarar uma variavel */
+   --cor1: #83e1ad;
+   --cor2: #3ddc84;
+   --cor3: #2fa866;
+   --cor4: #1a5c37;
+   --cor5: #063d1e;
+
+   --font-padrao: Arial, Helvetica, sans-serif;
+   --font-destaque: 'Android';
+}
+
+body
+{
+    font-family: var(--font-padrao);
+    background-color: var(--cor0);
+    margin: 0%;
+    text-align: justify;
+}
+
+header
+{
+    height: 100px;
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor4));
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.692);
+}
+
+header > h1
+{
+    color: white;
+    text-shadow: 1px 2px 7px rgba(0, 0, 0, 0.815);
+}
+
+header > p
+{
+    color: rgb(226, 226, 226);
+    text-shadow: 4px 4px 5px black;
+}
+
+nav
+{
+    text-align: left;
+    background-color: var(--cor4);
+    padding: 5px;
+}
+
+nav > a
+{
+    font-weight: bolder;
+    text-decoration: none;
+    color: white;
+    margin: 0px 10px;
+    transition-duration: 1s; /* tempo para execução */
+}
+
+
+nav > a:hover
+{
+    background-color: var(--cor0);
+    color: var(--cor5);
+    padding: 3px;
+    border-radius: 3px;
+}
+
+main
+{
+    background-color: white;
+    border-radius: 0px 0px 5px 5px;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: 2px auto 15px auto;
+    padding: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.877);
+}
+
+
+main p
+/* Sem o sinal '>' pare englobar todos os 'p' dentro de 'main' . Se estivesse com o sinal não funcionaria para os 'p' que estão dentro de 'article' , que está dentro de 'main' */
+{
+    margin: 15px 0px;
+    text-indent: 30px; /* espaço de início de parágrafo */ 
+    line-height: 1.5em; /* espaço entre linhas */
+}
+
+main h2
+{
+    font-family: var(--font-destaque);
+    color: var(--cor5);
+    font-size: 28px;
+    text-indent: 15px;
+}
+
+main h3
+{
+    font-family: var(--font-destaque);
+    color: var(--cor5);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    padding: 3px;
+}
+
+main a
+{
+    font-weight: bolder;
+    text-decoration: none;
+    color: var(--cor3);
+}
+
+main a:hover
+{
+    color: var(--cor0);
+}
+
+main a::after
+{
+    content: '\00A0\1F517';
+}
+
+main strong
+{
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+article img
+{
+    display: block;
+    margin: auto;
+}
+
+div
+{
+    background-color: var(--cor4);
+    padding: 20px;
+    margin: 0px -10px;
+    padding-bottom: 55.3%;
+    position: relative;
+}
+
+div > iframe
+{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+aside
+{
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(126, 255, 201, 0.589);
+    max-width: 900px;
+    margin: 15px auto auto auto;
+    padding: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.548);
+}
+
+aside > h4
+{
+    font-size: 20px;
+    color: white;
+    background-color: var(--cor3);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /* Uso de margem negativa para anular o 'padding' de 'aside' */
+}
+
+aside > ul
+{
+    list-style-type: '\2714\00A0';  
+    /* 
+       '\2714' = código referênte ao símbolo
+       '\00A0' = código referênte ao espaço em branco  
+    */
+
+    list-style-position: inside;  /* Posicionando os marcadores da lista para dentro da caixa 'aside' */
+
+    columns: 2; /* Número de colunas que será dividido o conteúdo */
+
+    line-height: 1.3em;
+}
+
+abbr
+{
+    text-decoration: underline;
+}
+
+footer
+{
+    background-color: var(--cor4);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
